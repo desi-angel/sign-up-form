@@ -15,7 +15,7 @@
                     <h1>Photography 101</h1>
                     <img src="./logo.png" alt="logo">
                 </div>
-                <p>Lets Capture the world. Learn to capture the most breathtaking pictures
+                <p class="dummy-text-left">Lets Capture the world. Learn to capture the most breathtaking pictures
                     to cherish for lifetime.
                 </p>
             </div>
@@ -28,7 +28,7 @@
                     Sign up <i>now</i> to get started <br><br>
                     You <i>know</i> you want to. <br><br>
                 </p>
-                <form action="#">
+                <form onsubmit="return false">
                     <p class="form-title">Let's do this</p>
                     <div class="input">
                             <label for="first-name" class="form-label">First Name</label>
@@ -39,28 +39,34 @@
                             <input class="form-input" type="text" name="last-name" id="last-name">
                     </div>
                     <div class="input">
-                            <label for="user-email" class="form-label">Email</label>
-                            <input class="form-input" type="email" name="user-email" id="user-email">
+                            <label for="user-email" class="form-label">Email <span class="form-tooltip" data-tooltip="Please Enter your email">?</span></label>
+                            <input class="form-input" type="email" name="user-email" id="user-email" >
                     </div>
                     <div class="input">
                             <label for="user-phone" class="form-label">Phone Number</label>
-                            <input class="form-input" type="number" name="user-phone" id="user-phone">
+                            <input class="form-input" type="tel" min="10"  value="+92"
+                            name="user-phone" id="user-phone" >
                     </div>
                     <div class="input">
-                            <label for="user-password" class="form-label">Password</label>
-                            <input class="form-input" type="password" name="user-password" id="user-password">
+                            <label for="user-password" class="form-label">Password <span class="form-tooltip" data-tooltip="Miinimum 6 characters, atleast one capital and one number" >?</span></label>
+                            <input class="form-input" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+                            title="Your password must be at least 6 characters as 
+                            well as contain at least one uppercase, one lowercase, and one 
+                            number." name="user-password" id="user-password">
                     </div>
                     <div class="input">
                             <label for="password-confirm" class="form-label">Confirm Password</label>
                             <input class="form-input" type="password" name="password-confirm" id="password-confirm">
+                            <p class="error-message"></p>
                     </div>
                     <div>
-                        <button class="btn">Create Account</button>
+                        <button class="btn" onclick="checkPass()">Create Account</button>
                         <p class="fineprint">Already have an account? <a href="#" class="log-in">Log in</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+    <script src="./pass-check.js"></script>
 </body>
 </html>
